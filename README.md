@@ -1,5 +1,3 @@
-# Backup-Nixos
-
 # 🚀 Backup NixOS
 
 Install, History Configuration, Config
