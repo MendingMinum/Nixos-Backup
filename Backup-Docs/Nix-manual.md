@@ -61,13 +61,16 @@ cryptsetup luksOpen /dev/sdX crypted
 
 ### Format filesystems
 mkfs.fat -F 32 -n BOOT /dev/sdX1
+
 mkfs.ext4 /dev/mapper/crypted
 
 ---
 
 ## 4. Mount filesystems
 mount /dev/mapper/crypted /mnt
+
 mkdir -p /mnt/boot
+
 mount -o umask=077 /dev/disk/by-label/BOOT /mnt/boot
 
 ---
