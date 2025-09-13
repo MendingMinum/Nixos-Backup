@@ -55,8 +55,8 @@ GPT
 - Boot partition  
 - Root (/) partition  
 
-> For LUKS encryption:
 cryptsetup luksFormat /dev/sdX
+
 cryptsetup luksOpen /dev/sdX crypted
 
 ### Format filesystems
