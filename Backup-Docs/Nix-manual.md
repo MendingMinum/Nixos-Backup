@@ -19,9 +19,13 @@ Start wpa_supplicant:
 sudo systemctl start wpa_supplicant
 
 Run wpa_cli and configure your network:
+
 add_network 0
+
 set_network 0 ssid "myhomenetwork"
+
 set_network 0 psk "mypassword"
+
 enable_network 0
 
 Successful connection example:
