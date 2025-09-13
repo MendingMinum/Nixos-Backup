@@ -38,7 +38,7 @@ nixos-minimal-25.05.809451.fe83bbdde2cc-x86_64-linux.iso
 
       Use the initial configuration file:  
 
-      configuration/configuration-live.nix
+      Configuration/Nix-config-raw/configuration-live-1.nix
 
       ---
 
