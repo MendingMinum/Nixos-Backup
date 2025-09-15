@@ -31,7 +31,7 @@ nixos-minimal-25.05.809451.fe83bbdde2cc-x86_64-linux.iso
       References:  
       - NixOS Installation Manual: https://nixos.org/manual/nixos/stable/#sec-installation-manual  
       - LUKS Setup: https://nixos.org/manual/nixos/stable/#ch-file-systems  
-
+      - Persoanl Backup Docs: 
       ---
 
       ## ⚙️ First Configuration
@@ -50,3 +50,6 @@ nixos-minimal-25.05.809451.fe83bbdde2cc-x86_64-linux.iso
       ---
 
       ✨ Done! You now have a **minimal NixOS backup setup** ready to use.
+
+
+3. **History Configuration And Config everything is stored in this repo**
