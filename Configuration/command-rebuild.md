@@ -17,4 +17,3 @@ Configuration 34 - Next
 \`\`\`bash
 nixos-rebuild switch
 \`\`\`
-
