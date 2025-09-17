@@ -45,3 +45,20 @@ cp "$CONFIG_DIR/flake.nix" "$RAW_DIR/flake${NEXT_NUM}.nix"
 
 echo "Files configuration.nix & flake.nix successfully copied to $RAW_DIR as configuration${NEXT_NUM}.nix & flake${NEXT_NUM}.nix"
 
+
+
+
+
+#
+#
+# /home/tutturuu/.tmux.conf
+# /home/tutturuu/.zshrc
+#
+#
+#
+#
+#
+#
+#
+#
+#
