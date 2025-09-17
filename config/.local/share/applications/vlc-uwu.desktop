@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=VLC (UwU Distrobox)
+Comment=Run VLC inside Distrobox UwU
+Exec=distrobox enter UwU -- /home/tutturuu/File/Software/Distrobox/UwU/Script/vlc-uwu.sh %U
+Icon=vlc
+Terminal=false
+Type=Application
+Categories=AudioVideo;Player;Video;
+MimeType=video/*;audio/*;

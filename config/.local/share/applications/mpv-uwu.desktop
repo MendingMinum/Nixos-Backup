@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=MPV (UwU Distrobox)
+Comment=Run mpv inside Distrobox UwU
+Exec=distrobox enter UwU -- /home/tutturuu/File/Software/Distrobox/UwU/Script/mpv-uwu.sh %U
+Icon=mpv
+Terminal=false
+Type=Application
+Categories=AudioVideo;Player;Video;
+MimeType=video/*;audio/*;

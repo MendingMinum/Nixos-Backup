@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=Scrcpy
+GenericName=Terminal entering Scrcpy
+Comment=Terminal entering Scrcpy
+Categories=Distrobox;System;Utility
+Exec=/nix/store/6wwwpqnh7nk8hc2551254y36xwhm422w-distrobox-1.8.1.2/bin/distrobox enter  Scrcpy
+Icon=/home/tutturuu/.local/share/icons/distrobox/ubuntu.png
+Keywords=distrobox;
+NoDisplay=false
+Terminal=true
+TryExec=/nix/store/6wwwpqnh7nk8hc2551254y36xwhm422w-distrobox-1.8.1.2/bin/distrobox
+Type=Application
+Actions=Remove;
+
+[Desktop Action Remove]
+Name=Remove Scrcpy from system
+Exec=/nix/store/6wwwpqnh7nk8hc2551254y36xwhm422w-distrobox-1.8.1.2/bin/distrobox rm  Scrcpy

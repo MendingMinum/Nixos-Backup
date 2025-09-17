@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Free Download Manager
+Comment=Download Manager in container UwU
+Exec=distrobox enter UwU -- /opt/freedownloadmanager/fdm
+Icon=/home/tutturuu/File/Software/Icon/fdm.png
+Terminal=false
+Type=Application
+Categories=Network;Utility;

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=osu!
+Comment=Rhythm is just a click away
+Exec=/home/tutturuu/File/Software/Game/Osu/osu.AppImage
+Icon=/home/tutturuu/File/Software/Game/Osu/lazer.png
+Terminal=false
+Type=Application
+Categories=Game;

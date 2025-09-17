@@ -58,7 +58,8 @@ backup_config() {
         ["/home/tutturuu/.icons"]="$CONFIG_BACKUP_DIR"
         ["/home/tutturuu/.themes"]="$CONFIG_BACKUP_DIR"
         ["/home/tutturuu/.local/share/fonts"]="$CONFIG_BACKUP_DIR/.local/share"
-        
+        ["/home/tutturuu/.local/share/applications"]="$CONFIG_BACKUP_DIR/.local/share"
+
         ["/home/tutturuu/Documents/Cli-Art"]="$CONFIG_BACKUP_DIR/Documents"
         ["/home/tutturuu/File/Script"]="$CONFIG_BACKUP_DIR/File"
 

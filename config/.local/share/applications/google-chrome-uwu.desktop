@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Google Chrome (UwU Distrobox)
+Comment=Run Google Chrome inside Distrobox UwU
+Exec=distrobox enter UwU -- /opt/google/chrome/google-chrome %U
+Icon=google-chrome
+Terminal=false
+Type=Application
+Categories=Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;

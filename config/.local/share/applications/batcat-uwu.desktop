@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Batcat (UwU Distrobox)
+Comment=Run batcat inside Distrobox UwU
+Exec=kitty -e distrobox enter UwU -- /home/tutturuu/File/Software/Distrobox/UwU/Script/batcat-uwu.sh %F
+Icon=utilities-terminal
+Terminal=false
+Type=Application
+Categories=Utility;
+MimeType=text/plain;
