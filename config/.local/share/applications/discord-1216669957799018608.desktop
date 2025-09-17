@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Game 1216669957799018608
+Exec=/home/tutturuu/.cache/appimage-run/ef7518dd1269d2915f6f14565fca929cb7a8641fc1446b6e7264029493fb4308/usr/bin/osu! %u
+Type=Application
+NoDisplay=true
+Categories=Discord;Games;
+MimeType=x-scheme-handler/discord-1216669957799018608
