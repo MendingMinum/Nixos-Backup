@@ -34,4 +34,18 @@ flatpak install flathub org.gnome.baobab
 
 flatpak install flathub org.gnome.Loupe
 
+# Link
+mkdir -p ~/Downloads
+mkdir -p ~/File/Software/Distrobox/UwU
+mkdir -p ~/File/Software/Distrobox/scrcpy
 
+mkdir -p ~/File/Software/Distrobox/UwU/.config/fish/
+
+
+ln -s /home/tutturuu/Downloads /home/tutturuu/File/Software/Distrobox/UwU/Downloads
+
+ln -s /home/tutturuu/Downloads /home/tutturuu/File/Software/Distrobox/Scrcpy/Downloads
+
+ln -s /home/tutturuu/File/Software/Distrobox/UwU/.config/fish/config.fish /home/tutturuu/File/Software/Distrobox/scrcpy/.config/fish/config.fish
+
+ln -s /home/tutturuu/File/Software/Distrobox/UwU/.config/starship.toml /home/tutturuu/File/Software/Distrobox/scrcpy/.config/starship.toml

@@ -53,6 +53,7 @@ backup_config() {
         ["/home/tutturuu/.zshrc"]="$CONFIG_BACKUP_DIR"
         
         ["/home/tutturuu/File/Software/Distrobox/scrcpy/.zshrc"]="$CONFIG_BACKUP_DIR/File/Software/Distrobox/scrcpy"
+        ["/home/tutturuu/File/Software/Distrobox/UwU/.config/fish/config.fish"]="$CONFIG_BACKUP_DIR/File/Software/Distrobox/UwU/.config/fish"
 
         ["/home/tutturuu/.icons"]="$CONFIG_BACKUP_DIR"
         ["/home/tutturuu/.themes"]="$CONFIG_BACKUP_DIR"

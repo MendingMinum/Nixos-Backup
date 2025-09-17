@@ -1,0 +1,17 @@
+ydotool key 125:1 38:1 38:0 125:0
+
+sleep 1
+
+ydotool type "nogame"
+
+sleep 1
+
+ydotool key 28:1 28:0
+
+sleep 1
+
+ydotool key 108:1 108:0
+
+sleep 1
+
+ydotool key 28:1 28:0

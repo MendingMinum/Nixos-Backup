@@ -163,10 +163,10 @@ Homebasic() {
 
 
 # User
-~/Documents/Cli-Art/user.sh
+#~/Documents/Cli-Art/user.sh
+#Homebasic
 
-Homebasic
-
+~/Documents/Cli-Art/start-art.sh
 
 # Alias
 
