@@ -1,0 +1,153 @@
+alias forwardadb='echo -e "1\n0\n0\n8030" | TCPAdb'
+alias forwardadb1='echo -e "1\n1\n0\n8030" | TCPAdb'
+
+alias Real-Storage='gio mount "sftp://127.0.0.1:8010/"'
+alias Tab-Storage='gio mount "sftp://localhost:8030/"'
+
+alias audio-tran='kitty --class kitty-audio --config /home/tutturuu/File/Script/kitty/kitty-transparant.conf -e cava &'
+
+
+
+
+alias Hyprlock-Magic='hyprlock -c ~/File/Script/hyprlock/hyprlock-magic.conf'
+
+alias subtitleextract='~/File/Script/subtitle/subtitle-setting.sh'
+alias convertsubtitle='~/File/Script/subtitle/convert-subtitle.sh'
+
+
+alias Android-Tools='adb version'
+
+alias yt='~/File/Script/yt/ytdownload.sh'
+
+alias shell-fish='tmux new-session -A -s main "fish"'
+
+
+
+termux-ssh() {
+  local ip
+  ip=$(ip route | grep default | awk '{print $3}')
+
+  local ssh_port=$1
+  shift
+
+  # Kalau SSH port tidak diisi, minta input
+  if [ -z "$ssh_port" ]; then
+    read -p "Masukkan port SSH: " ssh_port
+  fi
+
+  # Kumpulan port tambahan dari parameter sisanya
+  local extra_ports=("$@")
+
+  # Kalau tidak ada port tambahan dari argumen, minta manual (boleh kosong)
+  if [ ${#extra_ports[@]} -eq 0 ]; then
+    read -p "Masukkan port tambahan (pisahkan dengan spasi, boleh kosong): " -a extra_ports
+  fi
+
+  # Bangun opsi forwarding -L, mulai dari port SSH juga
+  local forwards=("-L" "${ssh_port}:127.0.0.1:${ssh_port}")
+  for port in "${extra_ports[@]}"; do
+    if [ -n "$port" ]; then
+      forwards+=("-L" "${port}:127.0.0.1:${port}")
+    fi
+  done
+
+  # Jalankan SSH dengan semua forwarding
+  ssh "${forwards[@]}" termux@"$ip" -p "$ssh_port"
+}
+
+termux-ssh-dual() {
+  local ip
+  ip=$1
+
+  local ssh_port=$2
+  shift
+
+  # Kalau SSH port tidak diisi, minta input
+  if [ -z "$ssh_port" ]; then
+    read -p "Masukkan port SSH: " ssh_port
+  fi
+
+  # Kumpulan port tambahan dari parameter sisanya
+  local extra_ports=("$@")
+
+  # Kalau tidak ada port tambahan dari argumen, minta manual (boleh kosong)
+  if [ ${#extra_ports[@]} -eq 0 ]; then
+    read -p "Masukkan port tambahan (pisahkan dengan spasi, boleh kosong): " -a extra_ports
+  fi
+
+  # Bangun opsi forwarding -L, mulai dari port SSH juga
+  local forwards=("-L" "${ssh_port}:127.0.0.1:${ssh_port}")
+  for port in "${extra_ports[@]}"; do
+    if [ -n "$port" ]; then
+      forwards+=("-L" "${port}:127.0.0.1:${port}")
+    fi
+  done
+
+  # Jalankan SSH dengan semua forwarding
+  ssh "${forwards[@]}" termux@"$ip" -p "$ssh_port"
+}
+
+
+Termux-Connect() {
+  if [ $# -lt 1 ]; then
+    echo "Usage: Termux-Connect <port1> [port2] ..."
+    return 1
+  fi
+
+  local ports=("$@") # semua port sebagai array
+  local cmd="termux-ssh ${ports[*]}"
+
+  if tmux has-session -t Termux 2>/dev/null; then
+    echo "Session 'Termux' already exists. Attaching..."
+    tmux attach -t Termux
+  else
+    echo "Creating new tmux session 'Termux' with command: $cmd"
+
+    # Buat sesi dengan shell default
+    tmux new-session -d -s Termux
+
+    # Kirim perintah ke sesi
+    tmux send-keys -t Termux "$cmd" C-m
+update-alternatives --config x-terminal-emulator
+    # Attach ke sesi
+    tmux attach -t Termux
+  fi
+}
+
+
+
+MusicPlaylist() {
+  if [ -z "$1" ]; then
+    echo "Usage: MusicPlaylist <path-to-playlist.m3u> [notitle]"
+  elif [ "$2" = "notitle" ]; then
+    mpv --vf=scale=640:360 --loop-playlist "$1"
+  else
+    mpv --title=MusicPlaylist --vf=scale=640:360 --loop-playlist --no-osc --osd-level=0 "$1"
+  fi
+}
+
+Music-Play() {
+  # Cek jika argumen kosong
+  if [ -z "$1" ]; then
+    echo "Usage: Music-Play <playlist_file>"
+    return 1
+  fi
+
+  local playlist="$1"
+
+  # Buat sesi tmux di background
+  tmux new-session -d -s Music
+
+  # Kirim perintah ke pane pertama (default 0)
+  tmux send-keys -t Music "MusicPlaylist $playlist" C-m
+
+  # Attach ke sesi Music
+  tmux attach -t Music
+}
+
+
+ytdl() {
+    /home/tutturuu/File/Software/yt-dlp/yt-dlp_linux "$@"
+}
+
+

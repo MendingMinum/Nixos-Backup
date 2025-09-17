@@ -51,17 +51,23 @@ backup_config() {
     declare -A FILES_TO_COPY=(
         ["/home/tutturuu/.tmux.conf"]="$CONFIG_BACKUP_DIR"
         ["/home/tutturuu/.zshrc"]="$CONFIG_BACKUP_DIR"
+        
+        ["/home/tutturuu/File/Software/Distrobox/scrcpy/.zshrc"]="$CONFIG_BACKUP_DIR/File/Software/Distrobox/scrcpy"
+
         ["/home/tutturuu/.icons"]="$CONFIG_BACKUP_DIR"
         ["/home/tutturuu/.themes"]="$CONFIG_BACKUP_DIR"
         ["/home/tutturuu/.local/share/fonts"]="$CONFIG_BACKUP_DIR/.local/share"
+        
         ["/home/tutturuu/Documents/Cli-Art"]="$CONFIG_BACKUP_DIR/Documents"
         ["/home/tutturuu/File/Script"]="$CONFIG_BACKUP_DIR/File"
+
         ["/home/tutturuu/.config/hypr"]="$CONFIG_BACKUP_DIR/.config"
         ["/home/tutturuu/.config/kitty"]="$CONFIG_BACKUP_DIR/.config"
         ["/home/tutturuu/.config/nvim"]="$CONFIG_BACKUP_DIR/.config"
         ["/home/tutturuu/.config/swaync"]="$CONFIG_BACKUP_DIR/.config"
         ["/home/tutturuu/.config/wlogout"]="$CONFIG_BACKUP_DIR/.config"
         ["/home/tutturuu/.config/wofi"]="$CONFIG_BACKUP_DIR/.config"
+
 
     )
 
