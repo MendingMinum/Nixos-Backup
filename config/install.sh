@@ -18,3 +18,20 @@ git clone https://github.com/zsh-users/zsh-completions \
 
 git clone https://github.com/zsh-users/zsh-history-substring-search \
   $ZSH_CUSTOM/plugins/zsh-history-substring-search
+
+
+
+# Flakpak
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
+flatpak install flathub org.mozilla.firefox
+
+flatpak install flathub com.valvesoftware.Steam
+
+flatpak install flathub com.github.xournalpp.xournalpp
+
+flatpak install flathub org.gnome.baobab
+
+flatpak install flathub org.gnome.Loupe
+
+

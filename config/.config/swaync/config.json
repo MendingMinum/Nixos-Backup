@@ -1,0 +1,8 @@
+{
+  "positionX": "center",
+  "positionY": "top",
+  "layer": "overlay",
+  "control-center-layer": "overlay",
+  "notification-window-width": 500,
+  "default-timeout": 2000
+}
