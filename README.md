@@ -1,6 +1,6 @@
 # 🚀 Backup NixOS
 
-## Certain settings may not be compatible because of disk paths and other personal configurations.
+## !!Certain settings may not be compatible because of disk paths and other personal configurations.!!
 
 Install, History Configuration, Config
 
