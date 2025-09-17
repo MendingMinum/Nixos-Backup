@@ -60,6 +60,9 @@ backup_config() {
         ["/home/tutturuu/.config/kitty"]="$CONFIG_BACKUP_DIR/.config"
         ["/home/tutturuu/.config/nvim"]="$CONFIG_BACKUP_DIR/.config"
         ["/home/tutturuu/.config/swaync"]="$CONFIG_BACKUP_DIR/.config"
+        ["/home/tutturuu/.config/wlogout"]="$CONFIG_BACKUP_DIR/.config"
+        ["/home/tutturuu/.config/wofi"]="$CONFIG_BACKUP_DIR/.config"
+
     )
 
     for SRC in "${!FILES_TO_COPY[@]}"; do

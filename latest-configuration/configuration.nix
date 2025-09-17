@@ -144,7 +144,6 @@
     hyprlock
     wofi
     wlogout
-    waybar
     hypridle
 
   # Sudo

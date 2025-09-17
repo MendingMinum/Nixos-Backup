@@ -1,0 +1,75 @@
+/** ********** Fonts ********** **/
+* {
+    font-family: "Cherry Bomb One", "JetBrains Mono", "Iosevka Nerd Font", archcraft, sans-serif;
+    font-size: 16px;
+}
+
+/** ********** Window ********** **/
+#window {
+    background-color: rgba(30, 30, 30, 0.85); /* semi-transparent dark background */
+    color: #e0e0e0; /* teks terang */
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px; /* lebih smooth corners */
+    backdrop-filter: blur(8px); /* efek blur di belakang */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* shadow halus */
+}
+
+/** ********** Outer box padding ********** **/
+#outer-box {
+    padding: 20px;
+}
+
+/** ********** Input ********** **/
+#input {
+    background-color: rgba(50, 50, 50, 0.6); /* semi-transparent */
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    color: #f0f0f0;
+}
+
+/** ********** Scroll ********** **/
+#scroll {
+    margin-top: 20px;
+}
+
+/** ********** Inner box ********** **/
+#inner-box {
+    /* bisa diisi jika ingin efek khusus */
+}
+
+/** ********** Image spacing ********** **/
+#img {
+    padding-right: 8px;
+}
+
+/** ********** Text ********** **/
+#text {
+    color: #e0e0e0;
+}
+
+
+
+/** ********** Entry ********** **/
+#entry {
+    padding: 6px;
+}
+
+#entry:selected {
+    background-color: rgba(100, 150, 250, 0.7); /* highlight biru semi-transparan */
+    color: #ffffff;
+    border-radius: 4px;
+}
+
+/** ********** Selected / Unselected ********** **/
+#unselected {
+}
+
+#selected {
+}
+
+/** ********** Input + Entry Selected ********** **/
+#input, #entry:selected {
+    border-radius: 6px;
+}
+
