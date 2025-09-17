@@ -53,8 +53,9 @@ echo "Files configuration.nix & flake.nix successfully copied to $RAW_DIR as con
 #
 # /home/tutturuu/.tmux.conf
 # /home/tutturuu/.zshrc
-#
-#
+# /home/tutturuu/File/Code/Nixos-Backup/config/Documents/Cli-Art
+# /home/tutturuu/File/Code/Nixos-Backup/config/File/Script
+# /home/tutturuu/.icons
 #
 #
 #
