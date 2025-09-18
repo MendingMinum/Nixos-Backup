@@ -48,7 +48,7 @@ choose_media_file() {
         for d in "${folders[@]}"; do entries+=("📁 $d"); done
 
         # Menu wofi
-        selected=$(printf "%s\n" "${entries[@]}" | wofi --dmenu --prompt "Pilih file / folder")
+        selected=$(printf "%s\n" "${entries[@]}" | wofi --dmenu --insensitive --prompt "Pilih file / folder")
         [[ -z "$selected" ]] && return 1
 
         clean_selected="${selected#* }" # hapus ikon
@@ -126,14 +126,14 @@ elif [[ "$1" == "wofiinput" ]]; then
             esac
         done
 
-        selected=$(printf "%s\n" "${entries[@]}" | wofi --dmenu --prompt "Pilih file / folder / input manual")
+        selected=$(printf "%s\n" "${entries[@]}" | wofi --dmenu --insensitive --prompt "Pilih file / folder / input manual")
         [[ -z "$selected" ]] && exit 0
 
         clean_selected="${selected#* }"
 
         case "$clean_selected" in
             "Input manual path")
-                INPUT_PATH=$(wofi --dmenu --prompt "Masukkan path lengkap file")
+                INPUT_PATH=$(wofi --dmenu --insensitive --prompt "Masukkan path lengkap file")
                 [[ -z "$INPUT_PATH" ]] && exit 0
                 [[ ! -f "$INPUT_PATH" ]] && { echo "Path tidak valid: $INPUT_PATH"; exit 1; }
                 ;;
@@ -167,7 +167,7 @@ elif [[ "$1" == "wofiinput" ]]; then
 
 else
     # --- Menu awal pilih playlist atau video ---
-    choice=$(printf "Playlist\nVideo" | wofi --dmenu --prompt "Pilih sumber") || exit 1
+    choice=$(printf "Playlist\nVideo" | wofi --dmenu --insensitive --prompt "Pilih sumber") || exit 1
 
     if [[ "$choice" == "Playlist" ]]; then
         SELECTED=$(choose_media_file "$PLAYLIST_DIR" "playlist")

@@ -110,7 +110,8 @@ shuffle_playlist_safely() {
 
 header=$(get_status)
 
-main_menu=$(printf "Play/Pause\nNext\nPrevious\nVolume Control\nSeek Control\nPilih Playlist\nTambah Video ke Playlist\nSet Aspect Ratio 16:9\nReset Aspect Ratio\nToggle Scale Crop\nReset Scale Crop\nToggle Shuffle\nFlip\nNormal\nToggle Repeat\nToggle Mute\nStatus Real-Time" | wofi --dmenu --prompt "$header")
+main_menu=$(printf "Play/Pause\nNext\nPrevious\nVolume Control\nSeek Control\nPilih Playlist\nTambah Video ke Playlist\nSet Aspect Ratio 16:9\nReset Aspect Ratio\nToggle Scale Crop\nReset Scale Crop\nToggle Shuffle\nFlip\nNormal\nToggle Repeat\nToggle Mute\nSet Resolution\nVideo Info\nStatus Real-Time" | wofi --dmenu --insensitive --prompt "$header"
+)
 
 
 case "$main_menu" in
@@ -244,6 +245,44 @@ case "$main_menu" in
         else
             echo '{ "command": ["set_property", "mute", true] }' | socat - "$SOCKET"
         fi
+        ;;
+
+    "Set Resolution")
+        CHOICE=$(printf "1080\n720\n480\n360\nOriginal" | wofi --dmenu --prompt "Set Resolution")
+
+        case "$CHOICE" in
+            1080)
+                echo '{ "command": ["set_property", "vf", ""] }' | socat - /tmp/mpv-socket
+                echo '{ "command": ["set_property", "vf", "scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080"] }' | socat - /tmp/mpv-socket
+                ;;
+            720)
+                echo '{ "command": ["set_property", "vf", ""] }' | socat - /tmp/mpv-socket
+                echo '{ "command": ["set_property", "vf", "scale=1280:720:force_original_aspect_ratio=increase,crop=1280:720"] }' | socat - /tmp/mpv-socket
+                ;;
+            480)
+                echo '{ "command": ["set_property", "vf", ""] }' | socat - /tmp/mpv-socket
+                echo '{ "command": ["set_property", "vf", "scale=854:480:force_original_aspect_ratio=increase,crop=854:480"] }' | socat - /tmp/mpv-socket
+                ;;
+            360)
+                echo '{ "command": ["set_property", "vf", ""] }' | socat - /tmp/mpv-socket
+                echo '{ "command": ["set_property", "vf", "scale=640:360:force_original_aspect_ratio=increase,crop=640:360"] }' | socat - /tmp/mpv-socket
+                ;;
+            Original)
+                echo '{ "command": ["set_property", "vf", ""] }' | socat - /tmp/mpv-socket
+                ;;
+        esac
+        ;;
+
+
+
+    "Video Info")
+        ORIG_W=$(echo '{ "command": ["get_property", "video-params/w"] }' | socat - "$SOCKET" | jq -r '.data')
+        ORIG_H=$(echo '{ "command": ["get_property", "video-params/h"] }' | socat - "$SOCKET" | jq -r '.data')
+        OUT_W=$(echo '{ "command": ["get_property", "dwidth"] }' | socat - "$SOCKET" | jq -r '.data')
+        OUT_H=$(echo '{ "command": ["get_property", "dheight"] }' | socat - "$SOCKET" | jq -r '.data')
+
+        INFO="Original: ${ORIG_W}x${ORIG_H}\nOutput: ${OUT_W}x${OUT_H}"
+        echo -e "$INFO" | wofi --dmenu --prompt "Video Info" >/dev/null
         ;;
 
     

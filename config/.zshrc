@@ -163,10 +163,19 @@ Homebasic() {
 
 
 # User
-#~/Documents/Cli-Art/user.sh
 #Homebasic
 
-~/Documents/Cli-Art/start-art.sh
+launch_cli_art() {
+    local tty=$(tty)
+
+    if [[ "$tty" == "/dev/tty1" || "$tty" == "/dev/tty2" || "$tty" == "/dev/tty3" ]]; then
+        ~/Documents/Cli-Art/user.sh
+    else
+        ~/Documents/Cli-Art/start-art.sh
+    fi
+}
+
+launch_cli_art
 
 # Alias
 
@@ -174,6 +183,11 @@ Homebasic() {
 alias Reload='cd && clear && source ~/.zshrc'
 alias Reload-Here='clear && source ~/.zshrc'
 alias Reload-Here-Keep='source ~/.zshrc'
+
+# Wallpaper
+alias mpv-auto='tmux new-session -d -s mpv-auto-session "bash /home/tutturuu/File/Script/mpvpaper/auto.sh" && echo "Session mpv-auto-session started in background"'
+alias mpv-auto-pause='tmux new-session -d -s mpv-pause-session "bash /home/tutturuu/File/Script/mpvpaper/auto-pause.sh" && echo "Session mpv-pause-session started in background"'
+
 
 # Bios
 alias RebootToBios='systemctl reboot --firmware-setup'
