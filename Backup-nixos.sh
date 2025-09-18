@@ -54,6 +54,7 @@ backup_config() {
         
         ["/home/tutturuu/File/Software/Distrobox/scrcpy/.zshrc"]="$CONFIG_BACKUP_DIR/File/Software/Distrobox/scrcpy"
         ["/home/tutturuu/File/Software/Distrobox/UwU/.config/fish/config.fish"]="$CONFIG_BACKUP_DIR/File/Software/Distrobox/UwU/.config/fish"
+        ["/home/tutturuu/File/Software/Distrobox/UwU/.config/mpv"]="$CONFIG_BACKUP_DIR/File/Software/Distrobox/UwU/.config"
         ["/home/tutturuu/File/Software/Game/Osu"]="$CONFIG_BACKUP_DIR/File/Software/Game"
 
         ["/home/tutturuu/.icons"]="$CONFIG_BACKUP_DIR"
