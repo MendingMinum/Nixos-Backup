@@ -1,4 +1,11 @@
 # Created by newuser for 5.9
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="robbyrussell"
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+
+
 export PATH="$PATH:/home/tutturuu/File/Software/platform tools latest linux/platform-tools"
 
 export PATH="$PATH:/home/tutturuu/File/Software/scrcpy/scrcpy-linux-x86_64-v3.3.2"
